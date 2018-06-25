@@ -1,0 +1,15 @@
+Firstly make sure that you have installed two 3rd-party softwares which have been included in the OpticalFlow and SurfaceRecover subfolders. They are used as parts of our code for simplicity. Then you can run our codes in demo.m and the results of our code are saved in the output subfolder.
+
+The 3rd party softwares of optical flow [1-3] and surface reconstruction [4,5] can also be downloaded from:
+
+http://people.csail.mit.edu/celiu/OpticalFlow/
+http://www.amitkagrawal.com/software.html
+
+
+
+
+1. C. Liu, ※Beyond pixels: Exploring new representations and applications for motion analysis,§ Ph.D. thesis, MIT, Cambridge, MA, USA (2009).
+2. T. Brox, A. Bruhn, N. Papenberg, and J. Weickert, ※High accuracy optical flow estimation based on a theory for warping,§ in ※European Conference on Computer Vision,§ (Springer, 2004), pp. 25每36.
+3. T. Brox and J. Malik, ※Large displacement optical flow: Descriptor matching in variational motion estimation,§ IEEE Trans. Pattern Anal. Mach. Intell. 33, 500每513 (2011).
+4. A. Agrawal, R. Raskar, and R. Chellappa, ※What is the range of surface reconstructions from a gradient field?§ in ※European Conference on Computer Vision,§ (Springer, 2006), pp. 578每591.
+5. A. Agrawal, R. Chellappa, and R. Raskar, ※An algebraic approach to surface reconstruction from gradient fields,§ in ※IEEE International Conference on Computer Vision,§ (IEEE, 2005), pp. 174每181.   

@@ -1,0 +1,84 @@
+clear all;close all;clc;
+
+H = 256
+W = 256
+
+mask_gx = zeros(H,W);
+mask_gy = zeros(H,W);
+
+% mask_gx(2,2) = 1;
+% mask_gx(2,3) = 1;
+% mask_gx(3,2) = 1;
+% mask_gx(3,3) = 1;
+% mask_gy(2,2) = 1;
+% mask_gy(2,3) = 1;
+% mask_gy(3,2) = 1;
+% mask_gy(3,3) = 1;
+%
+% mask_gx(1,1) = 1;
+% mask_gx(2,1) = 1;
+% mask_gy(1,1) = 1;
+% mask_gy(1,2) = 1;
+%
+% mask_gx(floor(H/4):floor(H/4)+10,:) = 1;
+% mask_gx(H-floor(H/4):H-floor(H/4)+10,:) = 1;
+% mask_gy(:,floor(H/4):floor(H/4)+10) = 1;
+% mask_gy(:,H-floor(H/4):H-floor(H/4)+10) = 1;
+%
+%
+mask_gx = ones(H,W);
+mask_gy = ones(H,W);
+
+% mask_gx(1,:) = 0;
+% mask_gx(end,:) = 0;
+% mask_gy(:,1) = 0;
+% mask_gy(:,end) = 0;
+
+
+% mask_gx(2:3,1) = 1;
+% mask_gx(2:3,4) = 1;
+% mask_gy(1,2:4) = 1;
+% mask_gy(3,2:4) = 1;
+
+
+%plot_links1(mask_gx,mask_gy)
+
+fp = fopen('mask_gx.txt','w');
+fprintf(fp,'%d\n',W);
+fprintf(fp,'%d\n',H);
+fprintf(fp,'%d\n',mask_gx);
+fclose(fp);
+
+fp = fopen('mask_gy.txt','w');
+fprintf(fp,'%d\n',W);
+fprintf(fp,'%d\n',H);
+fprintf(fp,'%d\n',mask_gy);
+fclose(fp);
+
+
+curl = randn(H,W);
+curl(end,:) = 0;
+curl(:,end) = 0;
+fp = fopen('curl.txt','w');
+fprintf(fp,'%d\n',W);
+fprintf(fp,'%d\n',H);
+fprintf(fp,'%d\n',curl);
+fclose(fp);
+
+% mask_gx
+% mask_gy
+
+
+% figure;imagesc(mask_gx);colormap gray;
+% figure;imagesc(mask_gy);colormap gray;
+
+
+mst_matlab(H,W,mask_gx,mask_gy,curl);
+
+% figure;imagesc(mask_gx);colormap gray;
+% figure;imagesc(mask_gy);colormap gray;
+
+%plot_links1(mask_gx,mask_gy)
+
+
+
