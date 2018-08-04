@@ -23,8 +23,8 @@ temp=medfilt2(temp,[30,30]);
 vx(~temp)=0;
 vy(~temp)=0;
 
-vx1=(vx.*para.pixel_size.*(para.n-1))./(para.defocus_distance+eps);
-vy1=(vy.*para.pixel_size.*(para.n-1))./(para.defocus_distance+eps);
+vx1=(vx.*para.pixel_size)./( (para.defocus_distance).*(para.n-1) +eps);
+vy1=(vy.*para.pixel_size)./( (para.defocus_distance).*(para.n-1) +eps);
 
 [~,fc,~,~,~]=generate_shape(vx1,vy1,[0 1 0 0 0]);
 height=fc-min(min(fc(para.capture_area)));

@@ -40,7 +40,7 @@ for i=1:size(filename_img,1)
 
     disp( ['Input distorted image: ' filename_img(i,:) '.jpg'] );
     para.alpha = 0.023;
-    para.pixel_size=1.935;
+    para.pixel_size=0.215;
     para.distance_sign=1;%-1;
     para.defocus_distance=100.*para.distance_sign;
     para.n=4./3;
